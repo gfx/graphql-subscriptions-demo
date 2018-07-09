@@ -1,5 +1,31 @@
 {
   "name": "graphql-ruby-demo",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "core-js": "^2.5.7"
+  },
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "apollo-boost": "^0.1.10",
+    "awesome-typescript-loader": "^5.2.0",
+    "graphql": "^0.13.2",
+    "graphql-tag": "^2.9.2",
+    "ts-node": "^7.0.0",
+    "typescript": "^2.9.2",
+    "webpack": "^4.15.1",
+    "webpack-assets-manifest": "^3.0.1",
+    "webpack-cli": "^3.0.8",
+    "webpack-serve": "^1.0.4"
+  }
 }
