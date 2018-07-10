@@ -2,6 +2,7 @@
   "name": "graphql-ruby-demo",
   "private": true,
   "dependencies": {
+    "actioncable": "^5.2.0",
     "core-js": "^2.5.7"
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",

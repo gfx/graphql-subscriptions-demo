@@ -15,9 +15,9 @@ const publicDir = "assets";
 const config = {
   mode: production ? "production" : "development",
   entry: {
-    bundle: [
+    application: [
       "core-js/shim",
-      "./client/bundle.ts",
+      "./client/application.ts",
     ],
   },
 
