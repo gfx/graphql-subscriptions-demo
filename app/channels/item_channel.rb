@@ -1,12 +1,15 @@
 class ItemChannel < ApplicationCable::Channel
   def subscribed
-    # stream_from "some_channel"
+    Rails.logger.info("[XXX] ItemChannel#subscribed!")
+
+    stream_from 'item'
   end
 
   def unsubscribed
-    # Any cleanup needed when channel is unsubscribed
+    Rails.logger.info("[XXX] ItemChannel#unsubscribed!")
   end
 
-  def foo
+  def hello
+    Rails.logger.info("[XXX] ItemCHannel#hello!")
   end
 end

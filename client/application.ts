@@ -1,3 +1,3 @@
-import ActionCable from 'actioncable';
-
-console.log('Hello, world!', ActionCable);
+import './App';
+import './cable';
+import './channels/item';

@@ -6,7 +6,7 @@ module WebpackHelper
 
   def webpack_path(name)
     __webpack_manifest.fetch(name).yield_self do |path|
-      "//localhost:#{WEBPACK_DEV_SERVER_PORT}#{path}"
+      "//localhost:#{WEBPACK_DEV_SERVER_PORT}/assets/#{path}"
     end
   end
 

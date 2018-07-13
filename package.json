@@ -1,10 +1,6 @@
 {
   "name": "graphql-ruby-demo",
   "private": true,
-  "dependencies": {
-    "actioncable": "^5.2.0",
-    "core-js": "^2.5.7"
-  },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",
   "main": "index.js",
@@ -17,6 +13,14 @@
   },
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "@types/react": "^16.4.6",
+    "actioncable": "^5.2.0",
+    "core-js": "^2.5.7",
+    "react": "^16.4.1",
+    "react-apollo": "^2.1.9",
+    "react-dom": "^16.4.1"
+  },
   "devDependencies": {
     "apollo-boost": "^0.1.10",
     "awesome-typescript-loader": "^5.2.0",
