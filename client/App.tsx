@@ -1,29 +1,27 @@
-import ApolloClient, { gql } from 'apollo-boost';
-import ReactDOM from 'react-dom';
-import React from 'react';
-import { ApolloProvider } from 'react-apollo';
-import { Query } from 'react-apollo';
+import { gql } from "apollo-boost";
+import ReactDOM from "react-dom";
+import React from "react";
+import { ApolloProvider } from "react-apollo";
+import { Subscription } from "react-apollo";
+import { client } from "./client";
 
-const client = new ApolloClient({});
-
-const GET_HELLO = gql`
-{
-  testField
-}
-`
+const SUBSCRIBE_VALUE = gql`
+  subscription onUpdate {
+    value
+  }
+`;
 
 class App extends React.Component {
   render() {
-    return <Query query={GET_HELLO}>
-       {({ loading, error, data }) => {
-      if (loading) return 'Loading...';
-      if (error) return `Error! ${error.message}`;
-
-      return (
-        <p>Hello, {data.testField}</p>
-      );
-    }}
-    </Query>;
+    return (
+      <Subscription subscription={SUBSCRIBE_VALUE}>
+        {args => {
+          console.log(args);
+          if (args.loading) return <p>Loading...</p>;
+          return <p>Hello, {JSON.stringify(args.data)}</p>;
+        }}
+      </Subscription>
+    );
   }
 }
 
@@ -31,5 +29,5 @@ ReactDOM.render(
   <ApolloProvider client={client}>
     <App />
   </ApolloProvider>,
-  document.getElementById('root'),
+  document.getElementById("root")
 );

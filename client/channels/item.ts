@@ -18,7 +18,3 @@ export const item = cable.subscriptions.create("ItemChannel", {
     return this.perform('hello');
   }
 });
-
-setTimeout(() => {
-  item.hello();
-}, 2000);
