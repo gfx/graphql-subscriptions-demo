@@ -20,6 +20,8 @@ class GraphqlChannel < ApplicationCable::Channel
       operation_name: operation_name
     })
 
+    pp result.to_h
+
     payload = {
       result: result.subscription? ? {data: nil} : result.to_h,
       more: result.subscription?,
