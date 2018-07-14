@@ -5,7 +5,7 @@ const path = require("path");
 
 const webpack = require("webpack");
 const atLoader = require("awesome-typescript-loader");
-const WebpackAssetsManifest = require("webpack-assets-manifest");
+const WebpackManifestPlugin = require("webpack-manifest-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 const production = ["production", "staging"].includes(process.env.NODE_ENV);
@@ -39,8 +39,8 @@ const config = {
   },
 
   plugins: [
-    new WebpackAssetsManifest({
-      writeToDisk: production,
+    new WebpackManifestPlugin({
+      writeToFileEmit: production,
     }),
     new atLoader.CheckerPlugin(),
     new webpack.optimize.LimitChunkCountPlugin({
